@@ -1,0 +1,177 @@
+.ab{
+    color:white;
+
+    background-color:green;
+    border:none;
+    padding:9px;
+    letter-spacing:20px;
+    cursor:pointer;
+    width:80px;
+    height:34px;
+}
+body {
+    margin: 0;
+}
+
+.content {
+    width: auto;
+    padding: 5px 0;
+}
+
+
+
+.top {
+    background-color: #f7f7f7
+}
+
+.bar {
+	height:80px;
+	
+    background-color:#fff;
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 48px;
+    color: #329a2a;
+    font-family: simhei, sans-serif;
+}
+
+.error {
+    background-color: #ff4400;
+    color: white;
+    line-height: 30px;
+    width: 100%;
+}
+
+input[type=text], input[type=password], button,input[type=email],input[type=tel]{
+    display: block;
+    font-size: 24px;
+    margin: 15px auto;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+button {
+    color: white;
+    background-color: red;
+    border: none;
+    padding: 5px;
+    letter-spacing: 5px;
+    cursor: pointer;
+}
+
+.form-box{
+	   border: 2px solid #fff;
+    width:650px;
+    height:600px;
+}
+
+#category{
+    height: 300px;
+    width:160px;
+    color:white;
+    background-color: #4999dd;
+    float:left;
+}
+
+#product-list{
+    height: 500px;
+    width: 900px;
+    margin-left: 30px;
+    float:left;
+}
+
+.product-item{
+    float:left;
+    list-style-type: none;
+    padding: 0 3px;
+    margin-bottom: 30px;
+}
+
+.clearfix{
+    overflow: auto;
+}
+
+ul{
+    padding: 0;
+}
+
+.ee{
+    position:absolute;
+    left:0px;
+    top:163px;
+    background:#1b6cff ;
+    width:200px;
+    height:100px;
+    text-align:center;
+}
+.bb{
+    position:absolute;
+    left:0px;
+    top:187px;
+    background:lightskyblue;
+    width:200px;
+    height:400px;
+    text-align:left;
+}
+
+.pd_select{
+    height:50px;
+    position: absolute;
+    top:30px;
+    left:800px;
+}
+
+.keywords{
+    float:left;
+    width:300px;
+    height:30px;
+    position: relative;
+}
+
+.keywords_list{
+    position: absolute;
+    width:300px;
+    height:auto;
+    top:45px;
+    background-color:rgb(255,255,240);
+    display: none;
+}
+
+.pd_content{
+    width:370px;
+    height: auto;
+    margin: 0 auto;
+    float: right;
+    margin-right: 10px;
+}
+
+.submit_id{
+    float:right;
+    width:70px;
+    height:30px;
+    color: white;
+    position:relative;
+    margin-top: 15px;
+}
+
+.search_auto{
+    border: 1px solid #329a2a;
+    position:absolute;
+    width:300px;
+}
+td{
+    cursor:pointer;
+}
+
+
+

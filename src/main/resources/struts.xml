@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+<constant name="struts.i18n.encoding" value="utf-8"/>   
+<package name="index" extends="struts-default" namespace="/index" >
+          <action name="*"  class="org.wjw.action.IndexAction"  method="{1}">
+              <result name="success">/jsp/index.jsp</result> 
+              <result name="display">/jsp/content.jsp</result>
+              <result name="detailContent">/jsp/detailContent.jsp</result>
+          </action>   
+    </package>
+    
+    <package name="admin" extends="struts-default" namespace="/admin" >
+      <!-- 声明拦截器 -->
+       <interceptors>
+          <interceptor name="authorty" class="org.wjw.interceptor.AuthorityInterceptor"/>
+          <!-- 定义一个拦截器栈myStack,该拦截器栈包含一个拦截器和一个拦截器栈-->
+          <interceptor-stack name="myStack">
+              <interceptor-ref name="defaultStack"/>
+              <interceptor-ref name="authorty"/>
+          </interceptor-stack>
+      </interceptors>
+    
+       <!-- 用户登录操作 -->
+          <action name="login_*"  class="org.wjw.action.LoginAction"  method="{1}">
+              <result name="success">/jsp/admin/index.jsp</result>
+                 <result name="input">/jsp/login.jsp</result>
+          </action>
+          
+<!-- <interceptor-ref name="myStack"/>   -->
+          <action name="user_*"  class="org.wjw.action.UserAction"  method="{1}">
+           <result name="categoryList">/jsp/admin/category/categoryList.jsp</result>
+           <result name="categoryAdd">/jsp/admin/category/categoryAdd.jsp</result>
+           <result name="updateCategory">/jsp/admin/category/categoryUpdate.jsp</result>
+           <result name="displayCategory"  type="redirectAction">
+                    <param name="actionName">user_listCategoryAdmin</param>
+                    <param name="namespace">/admin</param>
+              </result> 
+           <result name="listNews">/jsp/admin/news/newsList.jsp</result>
+           <result name="newsAdd">/jsp/admin/news/newsAdd.jsp</result>
+            <result name="displayNews"  type="redirectAction">
+                    <param name="actionName">user_listNews</param>
+                    <param name="namespace">/admin</param>
+              </result> 
+                <result name="updateNews">/jsp/admin/news/newsUpdate.jsp</result>
+                 <result name="details">/jsp/admin/news/newsDetail.jsp</result>
+                 <result name="select">/jsp/admin/news/newsList.jsp</result>
+            <result name="login">/jsp/login.jsp</result>
+          <!-- 在action中使用自定义拦截器 -->
+         <interceptor-ref name="myStack"/> 
+          </action>   
+    </package>
+</struts>    
